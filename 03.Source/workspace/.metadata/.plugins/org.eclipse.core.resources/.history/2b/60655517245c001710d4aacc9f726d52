@@ -1,0 +1,14 @@
+package service;
+
+import java.util.List;
+
+
+public interface SampleService  {
+
+
+	public void save(Product product);
+
+	public List<TradeSummery> getTradeSummery(TradeSummeryFilter filter );
+
+	public void load(Product product, int tradeID);
+}

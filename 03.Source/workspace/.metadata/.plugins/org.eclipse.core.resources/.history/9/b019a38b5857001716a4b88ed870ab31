@@ -1,0 +1,37 @@
+package action;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
+
+import dto.SampleDto;
+
+
+@Namespace("/")
+@ParentPackage("tiles-default")
+@Results({
+@Result(name = "success", location = "sample", type="tiles")
+})
+public class SampleAction extends AbstractAction {
+
+    public List<SampleDto> list = new ArrayList<SampleDto>();
+
+    @Action("/sample")
+    public String execute() throws Exception {
+
+        return "success";
+    }
+
+    @Action("/sample/regist")
+    public String search() throws Exception {
+
+
+        return "success";
+    }
+
+}

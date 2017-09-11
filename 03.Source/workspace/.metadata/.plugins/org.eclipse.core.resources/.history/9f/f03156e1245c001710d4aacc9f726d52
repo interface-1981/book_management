@@ -1,0 +1,16 @@
+package service;
+
+import java.util.List;
+
+import org.apache.commons.math3.stat.descriptive.summary.Product;
+
+
+public interface SampleService  {
+
+
+	public void save(Product product);
+
+	public List<TradeSummery> getTradeSummery(TradeSummeryFilter filter );
+
+	public void load(Product product, int tradeID);
+}

@@ -1,0 +1,28 @@
+package service.impl;
+
+import org.springframework.stereotype.Component;
+
+import dto.SampleDto;
+import entity.Sample;
+import service.AbstractDBAccessService;
+import service.SampleService;
+
+@Component
+public class SampleServiceImpl extends AbstractDBAccessService implements SampleService{
+
+
+	@Override
+	public void save(SampleDto sampleDto) {
+
+		super.beginTransaction();
+		Sample sample = new Sample();
+		try {
+			super.save(sample);
+			super.commit();
+		}finally {
+
+			super.close();
+		}
+	}
+
+}

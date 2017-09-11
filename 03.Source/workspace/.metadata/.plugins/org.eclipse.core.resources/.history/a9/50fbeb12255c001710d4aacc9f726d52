@@ -1,0 +1,59 @@
+package service.impl;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import org.hibernate.Criteria;
+import org.hibernate.Hibernate;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
+import org.hibernate.query.NativeQuery;
+import org.springframework.stereotype.Component;
+
+@Component
+public class ProductServiceImpl extends AbstractDBAccessService implements SampleService{
+
+
+	@Override
+	public void save(Product product) {
+
+		Session session = super.createSession();
+		Transaction trans = session.beginTransaction();
+		Sample trade = product.getTrade();
+		trade.setAuditTimeStamp(new Date());
+		try {
+			if (product.getTradeID() == 0) {
+				@SuppressWarnings({ "rawtypes", "deprecation" })
+				NativeQuery query = session.createSQLQuery("select coalesce(max(tradeid),0) from trade");
+				@SuppressWarnings("deprecation")
+				int id = (int) query.list().get(0);
+
+				++id;
+				product.setTradeID(id);
+				if (!product.existsCashflow()) {
+					product.generateCashflows();
+				}
+
+				session.save(product.getTrade());
+				session.flush();
+				trans.commit();
+			} else {
+				if (!product.existsCashflow()) {
+					product.generateCashflows();
+				}
+				session.update(product.getTrade());
+				session.flush();
+				trans.commit();
+			}
+		} finally {
+			if(trans.getStatus().canRollback()) {
+				trans.rollback();
+			}
+
+			session.close();
+		}
+	}
+
+}

@@ -1,0 +1,60 @@
+package service.impl;
+
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
+import dto.SampleDto;
+import entity.Sample;
+import service.AbstractDBAccessService;
+import service.SampleService;
+
+@Component
+public class SampleServiceImpl extends AbstractDBAccessService implements SampleService{
+
+
+	@Override
+	public void save(List<SampleDto> sampleDtoList) {
+
+		super.beginTransaction();
+		Sample sample;
+		try {
+			for(SampleDto sampleDto :sampleDtoList) {
+
+				sample = new Sample();
+
+				sample.setSampleString(sampleDto.getSampleString());
+				sample.setSampleInteger(sampleDto.getSampleInteger());
+				sample.setSampleDate(sampleDto.getSampleDate());
+
+				super.save(sample);
+
+			}
+			super.commit();
+		}finally {
+
+			super.close();
+		}
+
+	}
+
+	@Override
+	public List<SampleDto> getSampleDtoList() {
+		@SuppressWarnings({ "unchecked" })
+		List<Sample> sampleList = (List<Sample>)super.getCriteria(Sample.class).list();
+		SampleDto sampleDto;
+		for(Sample sample :sampleList) {
+
+			sampleDto = new SampleDto();
+
+			sampleDto.setSampleString(sample.getSampleString());
+			sampleDto.setSampleInteger(sample.getSampleInteger());
+			sampleDto.setSampleDate(sample.getSampleDate());
+
+			sampleDtoList.add(sampleDto);
+
+		}
+		return sampleDtoList;
+	}
+
+}

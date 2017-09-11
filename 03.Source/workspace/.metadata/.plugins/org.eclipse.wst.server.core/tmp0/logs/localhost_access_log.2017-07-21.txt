@@ -1,0 +1,11 @@
+0:0:0:0:0:0:0:1 - - [21/Jul/2017:00:15:42 +0900] "GET /books-management/user/ HTTP/1.1" 404 1249
+0:0:0:0:0:0:0:1 - - [21/Jul/2017:00:15:46 +0900] "GET /books-management/user HTTP/1.1" 200 1525
+0:0:0:0:0:0:0:1 - - [21/Jul/2017:00:15:46 +0900] "GET /finance-web/js/bootstrap-datepicker.js HTTP/1.1" 404 1095
+0:0:0:0:0:0:0:1 - - [21/Jul/2017:00:15:46 +0900] "GET /finance-web/css/bootstrap-datepicker.css HTTP/1.1" 404 1099
+0:0:0:0:0:0:0:1 - - [21/Jul/2017:00:15:46 +0900] "GET /finance-web/css/bootstrap-datepicker.css HTTP/1.1" 404 1099
+0:0:0:0:0:0:0:1 - - [21/Jul/2017:00:15:46 +0900] "GET /finance-web/js/bootstrap-datepicker.js HTTP/1.1" 404 1095
+0:0:0:0:0:0:0:1 - - [21/Jul/2017:00:15:55 +0900] "POST /books-management/user/regist HTTP/1.1" 200 1536
+0:0:0:0:0:0:0:1 - - [21/Jul/2017:00:15:55 +0900] "GET /finance-web/css/bootstrap-datepicker.css HTTP/1.1" 404 1099
+0:0:0:0:0:0:0:1 - - [21/Jul/2017:00:15:55 +0900] "GET /finance-web/js/bootstrap-datepicker.js HTTP/1.1" 404 1095
+0:0:0:0:0:0:0:1 - - [21/Jul/2017:00:15:55 +0900] "GET /finance-web/js/bootstrap-datepicker.js HTTP/1.1" 404 1095
+0:0:0:0:0:0:0:1 - - [21/Jul/2017:00:15:55 +0900] "GET /finance-web/css/bootstrap-datepicker.css HTTP/1.1" 404 1099

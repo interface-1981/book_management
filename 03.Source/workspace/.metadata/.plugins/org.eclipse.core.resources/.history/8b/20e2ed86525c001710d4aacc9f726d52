@@ -1,0 +1,10 @@
+package service;
+
+import dto.SampleDto;
+
+public interface SampleService  {
+
+
+	public void save(SampleDto sampleDto);
+
+}

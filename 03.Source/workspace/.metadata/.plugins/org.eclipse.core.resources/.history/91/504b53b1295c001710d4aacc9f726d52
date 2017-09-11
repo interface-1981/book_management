@@ -1,0 +1,36 @@
+package service.impl;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.springframework.stereotype.Component;
+
+import dto.SampleDto;
+import entity.Sample;
+import service.AbstractDBAccessService;
+import service.SampleService;
+
+@Component
+public class SampleServiceImpl extends AbstractDBAccessService implements SampleService{
+
+
+	@Override
+	public void save(SampleDto sampleDto) {
+
+		Session session = super.createSession();
+		Transaction trans = session.beginTransaction();
+		Sample sample = new Sample();
+		try {
+			session.save(sample);
+			session.flush();
+			trans.commit();
+		}finally {
+
+			if(trans.getStatus().canRollback()) {
+				trans.rollback();
+			}
+
+			session.close();
+		}
+	}
+
+}
