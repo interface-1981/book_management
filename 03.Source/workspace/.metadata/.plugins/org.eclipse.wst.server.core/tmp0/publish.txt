@@ -1,3 +1,0 @@
-#Tomcat publish data
-#Tue Sep 26 18:43:58 JST 2017
-org.eclipse.jst.jee.server\:/binary\:D\:\\\u56F3\u66F8\u7BA1\u7406\u30B7\u30B9\u30C6\u30E0\\03.Source\\workspace\\books-management\\WebContent\\WEB-INF\\lib\\spring-web-4.1.6.RELEASE.jar=WEB-INF/lib/spring-web-4.1.6.RELEASE.jar

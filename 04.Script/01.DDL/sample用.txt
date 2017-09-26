@@ -1,0 +1,59 @@
+-- Table: public."Book"
+
+-- DROP TABLE public."Book";
+
+CREATE TABLE public."Book"
+(
+    id integer NOT NULL,
+    title character varying COLLATE pg_catalog."default",
+    author character varying COLLATE pg_catalog."default",
+    CONSTRAINT "Book_pkey" PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public."Book"
+    OWNER to postgres;
+
+-- Table: public."OwnedBooks"
+
+-- DROP TABLE public."OwnedBooks";
+
+CREATE TABLE public."OwnedBooks"
+(
+    id integer NOT NULL,
+    "userId" integer,
+    "bookId" integer
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public."OwnedBooks"
+    OWNER to postgres;
+
+-- Table: public."TBL_HOGE"
+
+-- DROP TABLE public."TBL_HOGE";
+
+-- Table: public."User"
+
+-- DROP TABLE public."User";
+
+CREATE TABLE public."User"
+(
+    id integer NOT NULL,
+    name character varying COLLATE pg_catalog."default",
+    password character varying COLLATE pg_catalog."default",
+    CONSTRAINT "User_pkey" PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public."User"
+    OWNER to postgres;

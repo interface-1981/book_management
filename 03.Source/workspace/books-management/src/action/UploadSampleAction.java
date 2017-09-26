@@ -27,7 +27,7 @@ public class UploadSampleAction extends AbstractAction {
 
     public List<SampleDto> list = new ArrayList<SampleDto>();
 
-    @Action("/sample")
+    @Action("/upload-sample")
     public String execute() throws Exception {
 
     	this.list = new ArrayList<SampleDto>();
@@ -48,16 +48,10 @@ public class UploadSampleAction extends AbstractAction {
         return "success";
     }
 
-    @Action("/sample/regist")
+    @Action("/upload-sample/regist")
     public String regist() throws Exception {
 
     	this.sampleService.save(this.list);
-        return "success";
-    }
-    @Action("/sample/list")
-    public String getSampleList() throws Exception {
-
-    	this.list = this.sampleService.getSampleDtoList();
         return "success";
     }
 }

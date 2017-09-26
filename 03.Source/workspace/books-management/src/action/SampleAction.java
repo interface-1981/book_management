@@ -30,6 +30,7 @@ public class SampleAction extends AbstractAction {
     @Action("/sample")
     public String execute() throws Exception {
 
+
     	this.list = new ArrayList<SampleDto>();
     	SampleDto dto = new SampleDto();
 
