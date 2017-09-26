@@ -7,35 +7,32 @@ import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import dto.UserDto;
+import dto.UserListDto;
 import service.UserService;
 
 
 @Namespace("/")
 @ParentPackage("tiles-default")
 @Results({
-@Result(name = "success", location = "user", type="tiles")
+@Result(name = "success", location = "userlist", type="tiles")
 })
-public class UserAction extends AbstractAction {
+public class UserListAction extends AbstractAction {
 
 	@Autowired
 	private UserService userService;
 
-    public UserDto user = new UserDto();
+    public UserListDto userList = new UserListDto();
 
-    @Action("/user")
+    @Action("/userlist")
     public String execute() throws Exception {
 
-    	this.user = new UserDto();
-
         return "success";
     }
 
-    @Action("/user/regist")
-    public String regist() throws Exception {
+    @Action("/userlist/search")
+    public String search() throws Exception {
 
-    	this.userService.registUser(this.user);
+    	userList.setResults(userService.getUserList(userList));
         return "success";
     }
-
 }

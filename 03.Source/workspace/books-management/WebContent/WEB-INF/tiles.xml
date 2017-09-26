@@ -28,6 +28,7 @@
 <tiles-definitions>
     <definition name="sample" template="/WEB-INF/content/Sample.jsp" />
     <definition name="user" template="/WEB-INF/content/User.jsp" />
+    <definition name="userlist" template="/WEB-INF/content/UserList.jsp" />
 
 <!--
     <definition name="base" template="/WEB-INF/content/layout.jsp">

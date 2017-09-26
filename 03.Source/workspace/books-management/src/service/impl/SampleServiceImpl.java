@@ -3,12 +3,11 @@ package service.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.springframework.stereotype.Component;
 
 import dto.SampleDto;
-import dto.UserDto;
 import entity.Sample;
-import entity.User;
 import service.AbstractDBAccessService;
 import service.SampleService;
 
@@ -44,8 +43,12 @@ public class SampleServiceImpl extends AbstractDBAccessService implements Sample
 
 	@Override
 	public List<SampleDto> getSampleDtoList() {
-		@SuppressWarnings({ "unchecked" })
-		List<Sample> sampleList = (List<Sample>)super.getCriteria(Sample.class).list();
+
+		Criteria criteria = super.getCriteria(Sample.class);
+		@SuppressWarnings("unchecked")
+		List<Sample> sampleList = (List<Sample>)criteria.list();
+
+
 		SampleDto sampleDto;
 		List<SampleDto> sampleDtoList = new ArrayList<SampleDto>();
 		for(Sample sample :sampleList) {
@@ -61,22 +64,6 @@ public class SampleServiceImpl extends AbstractDBAccessService implements Sample
 
 		}
 		return sampleDtoList;
-	}
-
-	@Override
-	public void registUser(UserDto userDto) {
-		super.beginTransaction();
-		User user = new User();
-		try {
-			user.setName(userDto.getName());
-			user.setPassword(userDto.getPassword());
-
-			super.save(user);
-			super.commit();
-		}finally {
-
-			super.close();
-		}
 	}
 
 }

@@ -29,13 +29,13 @@
 
 			var newIndex = $("#table tr").length - 1;
 			name = name.replace(/(\[)([0-9]{1,})(\])/g,"["+newIndex+"]");
-			alert(name);
+			//alert(name);
 			return name
 		}
 		</script>
 	</head>
 	<body>
-		<s:form cssClass="form-horizontal" action="/user/regist">
+		<s:form cssClass="form-horizontal" action="/sample/regist">
 		  <div class="form-group">
 		    <div class="col-sm-12" >
 		      <div class="col-sm-12">

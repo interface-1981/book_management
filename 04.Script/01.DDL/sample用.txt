@@ -57,3 +57,13 @@ TABLESPACE pg_default;
 
 ALTER TABLE public."User"
     OWNER to postgres;
+
+CREATE SEQUENCE public.sample_sequence
+    INCREMENT 1
+    START 2
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE public.sample_sequence
+    OWNER TO postgres;
