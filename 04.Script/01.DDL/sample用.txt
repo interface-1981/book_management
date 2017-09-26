@@ -67,3 +67,23 @@ CREATE SEQUENCE public.sample_sequence
 
 ALTER SEQUENCE public.sample_sequence
     OWNER TO postgres;
+
+-- Table: public."Sample"
+
+-- DROP TABLE public."Sample";
+
+CREATE TABLE public."Sample"
+(
+    id integer NOT NULL,
+    "sampleString" character varying(100) COLLATE pg_catalog."default",
+    "sampleInteger" integer,
+    "sampleDate" date,
+    CONSTRAINT "Sample_pkey" PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public."Sample"
+    OWNER to postgres;

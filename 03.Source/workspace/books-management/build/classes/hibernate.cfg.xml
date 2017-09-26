@@ -13,6 +13,7 @@
         <property name="show_sql">true</property>
         <property name="use_outer_join">true</property>
         <mapping class="entity.User" />
+        <mapping class="entity.Sample" />
 
     </session-factory>
 </hibernate-configuration>

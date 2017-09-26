@@ -59,6 +59,10 @@ public class SampleAction extends AbstractAction {
     public String getSampleList() throws Exception {
 
     	this.list = this.sampleService.getSampleDtoList();
+    	if(this.list == null || this.list.size() == 0) {
+
+    		return this.execute();
+    	}
         return "success";
     }
 }
