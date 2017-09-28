@@ -20,12 +20,8 @@ public class UserServiceImpl extends AbstractDBAccessService implements UserServ
 	@Override
 	public void registUser(UserDto userDto) {
 		super.beginTransaction();
-		User user = new User();
 		try {
-			user.setName(userDto.getName());
-			user.setPassword(userDto.getPassword());
-
-			super.save(user);
+			super.save(userDto.getUser());
 			super.commit();
 		}finally {
 
@@ -39,23 +35,26 @@ public class UserServiceImpl extends AbstractDBAccessService implements UserServ
 
 		Criteria criteria = super.getCriteria(User.class);
 
-		criteria.add(Restrictions.like("name", userList.getUserCriteria(), MatchMode.ANYWHERE));
-
+		if(userList != null) {
+			criteria.add(Restrictions.like("name", userList.getUserCriteria(), MatchMode.ANYWHERE));
+		}
 		@SuppressWarnings("unchecked")
 		List<User> results = (List<User>)criteria.list();
 		UserDto userDto;
 		List<UserDto> userDtoList = new ArrayList<UserDto>();
 		for(User user :results) {
 
-			userDto = new UserDto();
-
-			userDto.setId(user.getId());
-			userDto.setName(user.getName());
-
+			userDto = new UserDto(user);
 			userDtoList.add(userDto);
 
 		}
 		return userDtoList;
+	}
+
+	@Override
+	public List<UserDto> getUserList() {
+		// TODO 自動生成されたメソッド・スタブ
+		return this.getUserList(null);
 	}
 
 

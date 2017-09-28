@@ -10,8 +10,6 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-		<link href="/finance-web/css/bootstrap-datepicker.css" rel="stylesheet" type="text/css">
-		<script src="/finance-web/js/bootstrap-datepicker.js"></script>
 		<script>
 
 		function addForm(){
@@ -35,7 +33,7 @@
 		</script>
 	</head>
 	<body>
-		<s:form cssClass="form-horizontal" action="/sample/regist">
+		<s:form cssClass="form-horizontal" action="/bulk_regist_sample/regist">
 		  <div class="form-group">
 		    <div class="col-sm-12" >
 		      <div class="col-sm-12">

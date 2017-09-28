@@ -26,9 +26,12 @@
         "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
-    <definition name="sample" template="/WEB-INF/content/Sample.jsp" />
+    <definition name="bulk_regist_sample" template="/WEB-INF/content/BulkRegistSample.jsp" />
     <definition name="user" template="/WEB-INF/content/User.jsp" />
-    <definition name="userlist" template="/WEB-INF/content/UserList.jsp" />
+    <definition name="book" template="/WEB-INF/content/Book.jsp" />
+    <definition name="owned_books" template="/WEB-INF/content/OwnedBooks.jsp" />
+    <definition name="owned_books_list" template="/WEB-INF/content/OwnedBooksList.jsp" />
+    <definition name="user_list" template="/WEB-INF/content/UserList.jsp" />
 
 <!--
     <definition name="base" template="/WEB-INF/content/layout.jsp">

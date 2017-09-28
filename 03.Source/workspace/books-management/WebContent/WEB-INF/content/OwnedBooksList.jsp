@@ -15,7 +15,7 @@
 		</script>
 	</head>
 	<body>
-		<s:form cssClass="form-horizontal" action="/user_list/search">
+		<s:form cssClass="form-horizontal" action="/owned_books_list/search">
 			<div class="form-group">
 				<div class="col-sm-12" >
 					<div class="col-sm-12">
@@ -23,7 +23,7 @@
 							<label class="control-label">ユーザー名:</label>
 						</div>
 						<div class="col-sm-8">
-							<s:textfield name="userList.userCriteria"  cssClass="form-control"/>
+							<s:textfield name="ownedBooksList.userCriteria"  cssClass="form-control"/>
 						</div>
 					</div>
 					<div class="col-sm-12">
@@ -33,13 +33,18 @@
 						<table class="table table-striped table-hover">
 							<tr>
 								<th>ID</th>
-								<th>Name</th>
+								<th>所有者</th>
+								<th>書籍名</th>
+								<th>著者</th>
+
 							</tr>
 
-							<s:iterator value="userList.results">
+							<s:iterator value="ownedBooksList.results">
 								<tr>
 									<td><s:property value="id" /></td>
-									<td><s:property value="name" /></td>
+									<td><s:property value="user.name" /></td>
+									<td><s:property value="book.title" /></td>
+									<td><s:property value="book.author" /></td>
 								</tr>
 							</s:iterator>
 						</table>

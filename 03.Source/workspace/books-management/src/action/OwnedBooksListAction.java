@@ -7,32 +7,31 @@ import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import dto.UserListDto;
-import service.UserService;
-
+import dto.OwnedBooksListDto;
+import service.OwnedBooksService;
 
 @Namespace("/")
 @ParentPackage("tiles-default")
 @Results({
-@Result(name = "success", location = "user_list", type="tiles")
+@Result(name = "success", location = "owned_books_list", type="tiles")
 })
-public class UserListAction extends AbstractAction {
+public class OwnedBooksListAction extends AbstractAction {
 
 	@Autowired
-	private UserService userService;
+	private OwnedBooksService ownedBooksService;
 
-    public UserListDto userList = new UserListDto();
+    public OwnedBooksListDto ownedBooksList = new OwnedBooksListDto();
 
-    @Action("/user_list")
+    @Action("/owned_books_list")
     public String execute() throws Exception {
 
         return "success";
     }
 
-    @Action("/user_list/search")
+    @Action("/owned_books_list/search")
     public String search() throws Exception {
 
-    	userList.setResults(userService.getUserList(userList));
+    	ownedBooksList.setResults(ownedBooksService.getOwnedBooksList(this.ownedBooksList));
         return "success";
     }
 }

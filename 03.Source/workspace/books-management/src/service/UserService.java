@@ -9,6 +9,7 @@ public interface UserService  {
 
 
 	public List<UserDto> getUserList(UserListDto userList) ;
+	public List<UserDto> getUserList() ;
 
 	public void registUser(UserDto userDto) ;
 

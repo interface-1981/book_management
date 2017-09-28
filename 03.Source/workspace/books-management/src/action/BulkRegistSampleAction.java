@@ -18,16 +18,16 @@ import service.SampleService;
 @Namespace("/")
 @ParentPackage("tiles-default")
 @Results({
-@Result(name = "success", location = "sample", type="tiles")
+@Result(name = "success", location = "bulk_regist_sample", type="tiles")
 })
-public class SampleAction extends AbstractAction {
+public class BulkRegistSampleAction extends AbstractAction {
 
 	@Autowired
 	private SampleService sampleService;
 
     public List<SampleDto> list = new ArrayList<SampleDto>();
 
-    @Action("/sample")
+    @Action("/bulk_regist_sample")
     public String execute() throws Exception {
 
 
@@ -49,13 +49,13 @@ public class SampleAction extends AbstractAction {
         return "success";
     }
 
-    @Action("/sample/regist")
+    @Action("/bulk_regist_sample/regist")
     public String regist() throws Exception {
 
     	this.sampleService.save(this.list);
         return "success";
     }
-    @Action("/sample/list")
+    @Action("/bulk_regist_sample/list")
     public String getSampleList() throws Exception {
 
     	this.list = this.sampleService.getSampleDtoList();

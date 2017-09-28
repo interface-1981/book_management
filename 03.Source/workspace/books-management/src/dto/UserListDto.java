@@ -20,8 +20,8 @@ public class UserListDto {
 		return results;
 	}
 
-	public void setResults(List<UserDto> userList) {
-		this.results = userList;
+	public void setResults(List<UserDto> results) {
+		this.results = results;
 	}
 
 

@@ -1,6 +1,7 @@
 package entity;
 
 import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,7 +17,7 @@ public class Book implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private String title;
-	private Integer author;
+	private String author;
 
 	@Id
 	@SequenceGenerator(name="pk_sequence",sequenceName="sample_sequence", allocationSize=1)
@@ -35,10 +36,10 @@ public class Book implements Serializable {
 		this.title = title;
 	}
 	@Column(name="\"author\"")
-	public Integer getAuthor() {
+	public String getAuthor() {
 		return author;
 	}
-	public void setAuthor(Integer author) {
+	public void setAuthor(String author) {
 		this.author = author;
 	}
 
