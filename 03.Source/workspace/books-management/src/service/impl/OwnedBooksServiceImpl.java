@@ -8,10 +8,8 @@ import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Component;
 
-import dto.BookDto;
 import dto.OwnedBooksDto;
-import dto.OwnedBooksListDto;
-import dto.UserDto;
+import dto.OwnedBooksLSearchDto;
 import entity.OwnedBooks;
 import service.AbstractDBAccessService;
 import service.OwnedBooksService;
@@ -38,13 +36,13 @@ public class OwnedBooksServiceImpl extends AbstractDBAccessService implements Ow
 	}
 
 	@Override
-	public List<OwnedBooksDto> getOwnedBooksList(OwnedBooksListDto ownedBooksListDto) {
+	public List<OwnedBooksDto> getOwnedBooksList(OwnedBooksLSearchDto ownedBooksSearchDto) {
 		Criteria criteria = super.getCriteria(OwnedBooks.class);
 
-		if(ownedBooksListDto != null) {
-			if (!ownedBooksListDto.getUserCriteria().trim().equals("")) {
+		if(ownedBooksSearchDto != null) {
+			if (!ownedBooksSearchDto.getUserCriteria().trim().equals("")) {
 				criteria.createCriteria("user")
-				.add(Restrictions.like("name", ownedBooksListDto.getUserCriteria(), MatchMode.ANYWHERE));
+				.add(Restrictions.like("name", ownedBooksSearchDto.getUserCriteria(), MatchMode.ANYWHERE));
 			}
 
 		}
@@ -54,13 +52,7 @@ public class OwnedBooksServiceImpl extends AbstractDBAccessService implements Ow
 		List<OwnedBooksDto> ownedBooksList = new ArrayList<OwnedBooksDto>();
 		for(OwnedBooks ownedBooks :results) {
 
-			ownedBooksDto = new OwnedBooksDto();
-
-			ownedBooksDto.setUserId(ownedBooks.getUserId());
-			ownedBooksDto.setBookId(ownedBooks.getBookId());
-			ownedBooksDto.setBook(new BookDto(ownedBooks.getBook()));
-			ownedBooksDto.setUser(new UserDto(ownedBooks.getUser()));
-
+			ownedBooksDto = new OwnedBooksDto(ownedBooks);
 			ownedBooksList.add(ownedBooksDto);
 
 		}

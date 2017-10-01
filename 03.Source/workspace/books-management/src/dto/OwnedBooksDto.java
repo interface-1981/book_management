@@ -1,5 +1,7 @@
 package dto;
 
+import entity.OwnedBooks;
+
 public class OwnedBooksDto {
 
 	private Integer id;
@@ -8,6 +10,18 @@ public class OwnedBooksDto {
 	private BookDto bookDto;
 	private UserDto userDto;
 
+
+	public OwnedBooksDto(OwnedBooks ownedBooks) {
+		this.setId(ownedBooks.getId());
+		this.setUserId(ownedBooks.getUserId());
+		this.setBookId(ownedBooks.getBookId());
+		this.setBook(new BookDto(ownedBooks.getBook()));
+		this.setUser(new UserDto(ownedBooks.getUser()));
+
+	}
+	public OwnedBooksDto() {
+
+	}
 	public Integer getId() {
 		return id;
 	}
@@ -39,6 +53,10 @@ public class OwnedBooksDto {
 		this.userDto = userDto;
 	}
 
+	public String getListLabel() {
+
+		return this.getBook().getTitle() + " (" + this.getUser().getName() + ")";
+	}
 
 
 }

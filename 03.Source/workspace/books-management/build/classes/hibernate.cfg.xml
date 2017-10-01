@@ -15,6 +15,7 @@
         <mapping class="entity.User" />
         <mapping class="entity.Book" />
         <mapping class="entity.OwnedBooks" />
+        <mapping class="entity.LendingBooks" />
         <mapping class="entity.Sample" />
 
     </session-factory>

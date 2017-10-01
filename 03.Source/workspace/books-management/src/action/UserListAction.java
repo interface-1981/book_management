@@ -7,7 +7,7 @@ import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import dto.UserListDto;
+import dto.UserSearchDto;
 import service.UserService;
 
 
@@ -21,7 +21,7 @@ public class UserListAction extends AbstractAction {
 	@Autowired
 	private UserService userService;
 
-    public UserListDto userList = new UserListDto();
+    public UserSearchDto userSearchDto = new UserSearchDto();
 
     @Action("/user_list")
     public String execute() throws Exception {
@@ -32,7 +32,7 @@ public class UserListAction extends AbstractAction {
     @Action("/user_list/search")
     public String search() throws Exception {
 
-    	userList.setResults(userService.getUserList(userList));
+    	userSearchDto.setResults(userService.getUserList(userSearchDto));
         return "success";
     }
 }

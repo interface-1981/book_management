@@ -29,27 +29,25 @@ public class OwnedBooksAction extends AbstractAction {
 	@Autowired
 	private OwnedBooksService ownedBooksService;
 
-	public OwnedBooksDto ownedbooks;
+	public OwnedBooksDto ownedbooksDto;
+
 	private UserDto[] userList;
 	private BookDto[] bookList;
 
 	public Integer userId;
 	public Integer bookId;
 
-
-    public UserDto user = new UserDto();
-
     private void initialize() {
     	this.bookList = this.bookService.getBookList().toArray(new BookDto[0]);
     	this.userList = this.userService.getUserList().toArray(new UserDto[0]);
-    	this.bookId = this.ownedbooks.getBookId();
-    	this.userId = this.ownedbooks.getUserId();
+    	this.bookId = this.ownedbooksDto.getBookId();
+    	this.userId = this.ownedbooksDto.getUserId();
 
     }
     @Action("/owned_books")
     public String execute() throws Exception {
 
-    	this.ownedbooks = new OwnedBooksDto();
+    	this.ownedbooksDto = new OwnedBooksDto();
     	this.initialize();
         return "success";
     }
@@ -57,10 +55,10 @@ public class OwnedBooksAction extends AbstractAction {
     @Action("/owned_books/regist")
     public String regist() throws Exception {
 
-    	this.ownedbooks = new OwnedBooksDto();
-    	this.ownedbooks.setBookId(bookId);
-    	this.ownedbooks.setUserId(userId);
-    	this.ownedBooksService.registOwnedBooks(this.ownedbooks);
+    	this.ownedbooksDto = new OwnedBooksDto();
+    	this.ownedbooksDto.setBookId(bookId);
+    	this.ownedbooksDto.setUserId(userId);
+    	this.ownedBooksService.registOwnedBooks(this.ownedbooksDto);
     	this.initialize();
         return "success";
     }

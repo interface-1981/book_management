@@ -1,4 +1,8 @@
+/UserAction.class
 /action/
-/service/
 /dto/
 /entity/
+/hibernate.cfg.xml
+/service/
+/struts.properties
+/struts.xml

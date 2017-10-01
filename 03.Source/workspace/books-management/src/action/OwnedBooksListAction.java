@@ -7,7 +7,7 @@ import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import dto.OwnedBooksListDto;
+import dto.OwnedBooksLSearchDto;
 import service.OwnedBooksService;
 
 @Namespace("/")
@@ -20,7 +20,7 @@ public class OwnedBooksListAction extends AbstractAction {
 	@Autowired
 	private OwnedBooksService ownedBooksService;
 
-    public OwnedBooksListDto ownedBooksList = new OwnedBooksListDto();
+    public OwnedBooksLSearchDto ownedBooksSearchDto = new OwnedBooksLSearchDto();
 
     @Action("/owned_books_list")
     public String execute() throws Exception {
@@ -31,7 +31,7 @@ public class OwnedBooksListAction extends AbstractAction {
     @Action("/owned_books_list/search")
     public String search() throws Exception {
 
-    	ownedBooksList.setResults(ownedBooksService.getOwnedBooksList(this.ownedBooksList));
+    	ownedBooksSearchDto.setResults(ownedBooksService.getOwnedBooksList(this.ownedBooksSearchDto));
         return "success";
     }
 }

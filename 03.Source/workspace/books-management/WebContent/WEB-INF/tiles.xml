@@ -25,39 +25,62 @@
         "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
         "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
-<tiles-definitions>
-    <definition name="bulk_regist_sample" template="/WEB-INF/content/BulkRegistSample.jsp" />
-    <definition name="user" template="/WEB-INF/content/User.jsp" />
-    <definition name="book" template="/WEB-INF/content/Book.jsp" />
-    <definition name="owned_books" template="/WEB-INF/content/OwnedBooks.jsp" />
-    <definition name="owned_books_list" template="/WEB-INF/content/OwnedBooksList.jsp" />
-    <definition name="user_list" template="/WEB-INF/content/UserList.jsp" />
 
-<!--
+<tiles-definitions>
+
     <definition name="base" template="/WEB-INF/content/layout.jsp">
-      <put-attribute name="title" value="Resource Editor"/>
+      <put-attribute name="title" value=""/>
       <put-attribute name="header" value="/WEB-INF/content/header.jsp"/>
       <put-attribute name="menu" value="/WEB-INF/content/menu.jsp"/>
       <put-attribute name="body" value="/WEB-INF/index.html"/>
       <put-attribute name="footer" value="/WEB-INF/content/footer.jsp"/>
     </definition>
-    <definition name="fx-view" extends="base">
-      <put-attribute name="title" value="FX Deal Regist" />
-      <put-attribute name="body" value="/WEB-INF/content/product/fx.jsp" />
-    </definition>
-        <definition name="cash-view" extends="base">
-      <put-attribute name="title" value="Cash Deal Regist" />
-      <put-attribute name="body" value="/WEB-INF/content/product/cash.jsp" />
-    </definition>
-    <definition name="trade-summery-view" extends="base">
-      <put-attribute name="title" value="Trade Summery" />
-      <put-attribute name="body" value="/WEB-INF/content/product/trade-summery.jsp" />
+
+    <definition name="login" extends="base">
+      <put-attribute name="title" value="ログイン" />
+      <put-attribute name="body" value="/WEB-INF/content/Login.jsp" />
     </definition>
 
-    <definition name="yieldcurve-view" extends="base">
-      <put-attribute name="title" value="YieldCurve" />
-      <put-attribute name="body" value="/WEB-INF/content/market/yieldcurve.jsp" />
+    <definition name="bulk_regist_sample" extends="base">
+      <put-attribute name="title" value="一括登録" />
+      <put-attribute name="body" value="/WEB-INF/content/BulkRegistSample.jsp" />
     </definition>
--->
+
+    <definition name="user" extends="base">
+      <put-attribute name="title" value="ユーザー登録" />
+      <put-attribute name="body" value="/WEB-INF/content/User.jsp" />
+    </definition>
+
+    <definition name="user_list" extends="base">
+      <put-attribute name="title" value="ユーザー一覧" />
+      <put-attribute name="body" value="/WEB-INF/content/UserList.jsp" />
+    </definition>
+
+    <definition name="book" extends="base">
+      <put-attribute name="title" value="図書マスタ登録" />
+      <put-attribute name="body" value="/WEB-INF/content/Book.jsp" />
+    </definition>
+
+    <definition name="owned_books" extends="base">
+      <put-attribute name="title" value="個人所蔵図書登録" />
+      <put-attribute name="body" value="/WEB-INF/content/OwnedBooks.jsp" />
+    </definition>
+
+    <definition name="owned_books_list" extends="base">
+      <put-attribute name="title" value="個人所蔵図書一覧" />
+      <put-attribute name="body" value="/WEB-INF/content/OwnedBooksList.jsp" />
+    </definition>
+
+    <definition name="lending_books" extends="base">
+      <put-attribute name="title" value="図書貸出登録" />
+      <put-attribute name="body" value="/WEB-INF/content/LendingBooks.jsp" />
+    </definition>
+
+    <definition name="lending_books_list" extends="base">
+      <put-attribute name="title" value="図書貸出登録" />
+      <put-attribute name="body" value="/WEB-INF/content/LendingBooksList.jsp" />
+    </definition>
+
+
 </tiles-definitions>
 

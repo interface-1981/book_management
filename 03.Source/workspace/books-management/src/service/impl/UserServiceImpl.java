@@ -9,7 +9,7 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Component;
 
 import dto.UserDto;
-import dto.UserListDto;
+import dto.UserSearchDto;
 import entity.User;
 import service.AbstractDBAccessService;
 import service.UserService;
@@ -31,7 +31,7 @@ public class UserServiceImpl extends AbstractDBAccessService implements UserServ
 	}
 
 	@Override
-	public List<UserDto> getUserList(UserListDto userList) {
+	public List<UserDto> getUserList(UserSearchDto userList) {
 
 		Criteria criteria = super.getCriteria(User.class);
 

@@ -1,25 +1,27 @@
 package action;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Map;
 
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 import org.apache.struts2.interceptor.SessionAware;
+import org.apache.struts2.util.ServletContextAware;
 
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class AbstractAction extends ActionSupport implements ServletResponseAware,SessionAware, Action {
+public class AbstractAction extends ActionSupport implements ServletContextAware, ServletRequestAware, ServletResponseAware,SessionAware, Action {
 
     private static final long serialVersionUID = 1L;
 
-    public HttpServletResponse response;
-
-    public Map sessionMap;
+    protected HttpServletRequest request;
+    protected HttpServletResponse response;
+    protected ServletContext context;
+    Map sessionMap;
 
     public void setServletResponse(HttpServletResponse response) {
         this.response = response;
@@ -29,29 +31,14 @@ public class AbstractAction extends ActionSupport implements ServletResponseAwar
         this.sessionMap = sessionMap;
     }
 
-    /*
-     * View Helper Method
-     */
-	public String zeroToBlank(int num) {
-
-		if (num == 0) {
-			return "";
-		} else {
-			return new Integer(num).toString();
-		}
+	@Override
+	public void setServletContext(ServletContext context) {
+		this.context = context;
 	}
 
-	public String toString(Date date) {
+	@Override
+	public void setServletRequest(HttpServletRequest request) {
+		this.request = request;
 
-		if(date == null) {
-			return "";
-		}
-		DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
-		return df.format(date);
-	}
-
-	public String toString(double value) {
-
-		return String.format("%f", value);
 	}
 }

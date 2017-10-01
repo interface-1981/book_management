@@ -48,7 +48,7 @@ public class OwnedBooks implements Serializable {
 	public void setBookId(Integer bookId) {
 		this.bookId = bookId;
 	}
-	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 	@JoinColumn(name = "\"bookId\"", referencedColumnName = "\"id\"", updatable = false, insertable = false)
 	public Book getBook() {
 		return book;
@@ -56,7 +56,7 @@ public class OwnedBooks implements Serializable {
 	public void setBook(Book book) {
 		this.book = book;
 	}
-	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 	@JoinColumn(name = "\"userId\"", referencedColumnName = "\"id\"", updatable = false, insertable = false)
 	public User getUser() {
 		return user;
