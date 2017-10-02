@@ -61,6 +61,11 @@
       <put-attribute name="body" value="/WEB-INF/content/Book.jsp" />
     </definition>
 
+    <definition name="book_list" extends="base">
+      <put-attribute name="title" value="図書マスタ一覧" />
+      <put-attribute name="body" value="/WEB-INF/content/BookList.jsp" />
+    </definition>
+
     <definition name="owned_books" extends="base">
       <put-attribute name="title" value="個人所蔵図書登録" />
       <put-attribute name="body" value="/WEB-INF/content/OwnedBooks.jsp" />

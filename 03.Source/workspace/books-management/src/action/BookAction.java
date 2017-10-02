@@ -42,7 +42,6 @@ public class BookAction extends AbstractAction {
     @SkipValidation
     public String execute() throws Exception {
 
-    	this.bookDto.setFileImgUrl("/books-management/upload/logo_saisyu.png");
         return "success";
     }
 
