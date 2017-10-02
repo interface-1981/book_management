@@ -86,4 +86,23 @@ WITH (
 TABLESPACE pg_default;
 
 ALTER TABLE public."Sample"
-    OWNER to postgres;
+  
+
+-- Table: public."LendingBooks"
+
+-- DROP TABLE public."LendingBooks";
+
+CREATE TABLE public."LendingBooks"
+(
+    id integer NOT NULL,
+    "ownedBooksId" integer,
+    "userId" integer,
+    status character varying(10) COLLATE pg_catalog."default"
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public."LendingBooks"
+    OWNER to postgres;  OWNER to postgres;
