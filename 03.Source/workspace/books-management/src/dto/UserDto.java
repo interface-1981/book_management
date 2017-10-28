@@ -54,7 +54,7 @@ public class UserDto {
 	public void setConfirmationPassword(String confirmationPassword) {
 		this.confirmationPassword = confirmationPassword;
 	}
-	public User getUser() {
+	public User createUserEntity() {
 		User user = new User();
 		user.setName(this.getName());
 		user.setPassword(this.getPassword());

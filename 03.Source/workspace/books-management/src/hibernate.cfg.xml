@@ -17,6 +17,9 @@
         <mapping class="entity.OwnedBooks" />
         <mapping class="entity.LendingBooks" />
         <mapping class="entity.Sample" />
+        <mapping class="entity.WebAPIAccessHistory" />
+
+
 
     </session-factory>
 </hibernate-configuration>

@@ -10,11 +10,14 @@ public class BookDto {
 	private String title;
 	private String author;
 	private String fileImgUrl;
+	private Long isbn;
+
 
 	public BookDto(Book book) {
 		this.setId(book.getId());
 		this.setAuthor(book.getAuthor());
 		this.setTitle(book.getTitle());
+		this.setIsbn(book.getIsbn());
 
 	}
 	public BookDto() {
@@ -49,11 +52,19 @@ public class BookDto {
 	public void setFileImgUrl(String fileImgUrl) {
 		this.fileImgUrl = fileImgUrl;
 	}
-	public Book getBook() {
+
+	public Long getIsbn() {
+		return isbn;
+	}
+	public void setIsbn(Long isbn) {
+		this.isbn = isbn;
+	}
+	public Book createBookEntity() {
 		Book book = new Book();
 		book.setId(this.getId());
 		book.setAuthor(this.getAuthor());
 		book.setTitle(this.getTitle());
+		book.setIsbn(this.getIsbn());
 		return book;
 	}
 }

@@ -18,6 +18,7 @@ public class Book implements Serializable {
 	private Integer id;
 	private String title;
 	private String author;
+	private Long isbn;
 
 	@Id
 	@SequenceGenerator(name="pk_sequence",sequenceName="sample_sequence", allocationSize=1)
@@ -41,6 +42,13 @@ public class Book implements Serializable {
 	}
 	public void setAuthor(String author) {
 		this.author = author;
+	}
+	@Column(name="\"isbn\"")
+	public Long getIsbn() {
+		return isbn;
+	}
+	public void setIsbn(Long isbn) {
+		this.isbn = isbn;
 	}
 
 }

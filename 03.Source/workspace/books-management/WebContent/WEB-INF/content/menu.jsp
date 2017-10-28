@@ -21,6 +21,7 @@
                 <ul class="dropdown-menu" role="menu">
                   <li><a href="<s:url value="/book"/>" >図書マスタ登録</a></li>
                   <li><a href="<s:url value="/book_list"/>" >図書マスタ一覧</a></li>
+                  <li><a href="<s:url value="/bulk_regist_books"/>" >図書マスタ一括登録</a></li>
                 </ul>
               </li>
                 <li style="border-left : solid 1px #bbbbbb;" class="dropdown">

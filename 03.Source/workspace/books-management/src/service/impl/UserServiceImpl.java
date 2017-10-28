@@ -21,7 +21,7 @@ public class UserServiceImpl extends AbstractDBAccessService implements UserServ
 	public void registUser(UserDto userDto) {
 		super.beginTransaction();
 		try {
-			super.save(userDto.getUser());
+			super.save(userDto.createUserEntity());
 			super.commit();
 		}finally {
 
