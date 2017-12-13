@@ -11,11 +11,11 @@ import org.springframework.stereotype.Component;
 import dto.OwnedBooksDto;
 import dto.OwnedBooksLSearchDto;
 import entity.OwnedBooks;
-import jp.iface.books.service.AbstractDBAccessService;
+import jp.iface.common.AbstractDBAccessComponent;
 import service.OwnedBooksService;
 
 @Component
-public class OwnedBooksServiceImpl extends AbstractDBAccessService implements OwnedBooksService{
+public class OwnedBooksServiceImpl extends AbstractDBAccessComponent implements OwnedBooksService{
 
 
 

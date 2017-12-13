@@ -8,7 +8,7 @@ import org.apache.struts2.convention.annotation.Results;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import dto.UserSearchDto;
-import jp.iface.books.action.AbstractAction;
+import jp.iface.common.AbstractAction;
 import service.UserService;
 
 

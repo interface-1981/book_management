@@ -10,9 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import dto.BookDto;
 import dto.OwnedBooksDto;
 import dto.UserDto;
-import jp.iface.books.action.AbstractAction;
 import jp.iface.books.dto.BookSearchDto;
 import jp.iface.books.service.BookService;
+import jp.iface.common.AbstractAction;
 import service.OwnedBooksService;
 import service.UserService;
 

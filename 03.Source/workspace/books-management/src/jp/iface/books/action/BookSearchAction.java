@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import jp.iface.books.dto.BookSearchDto;
 import jp.iface.books.service.BookService;
+import jp.iface.common.AbstractAction;
+import jp.iface.common.Configuration;
 
 
 @Namespace("/")
@@ -31,7 +33,7 @@ public class BookSearchAction extends AbstractAction {
      * @throws Exception
      */
     public String initView() throws Exception {
-    	bookSearchDto.setDisplayCount(3);
+    	bookSearchDto.setPageDisplayCount(Configuration.getValueInt(P_PAGE_DISPLAY_COUNT));
     	bookSearchDto.pageInit();
 
         return "success";

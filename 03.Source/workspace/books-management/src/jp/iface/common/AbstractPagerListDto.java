@@ -1,4 +1,4 @@
-package jp.iface.books.dto;
+package jp.iface.common;
 
 public abstract class AbstractPagerListDto {
 
@@ -7,7 +7,7 @@ public abstract class AbstractPagerListDto {
 	public final String ACTION_PREVIEW = "preview";
 
 	private long recordCount;
-	private int displayCount;
+	private int pageDisplayCount;
 	private int currentPage;
 	private String pagerAction;
 
@@ -18,11 +18,12 @@ public abstract class AbstractPagerListDto {
 	public void setRecordCount(long recordCount) {
 		this.recordCount = recordCount;
 	}
-	public int getDisplayCount() {
-		return displayCount;
+
+	public int getPageDisplayCount() {
+		return pageDisplayCount;
 	}
-	public void setDisplayCount(int displayCount) {
-		this.displayCount = displayCount;
+	public void setPageDisplayCount(int pageDisplayCount) {
+		this.pageDisplayCount = pageDisplayCount;
 	}
 	public int getCurrentPage() {
 		return currentPage;
@@ -58,14 +59,14 @@ public abstract class AbstractPagerListDto {
 			pagerAction = null;
 		}
 
-		return (currentPage -1) * displayCount;
+		return (currentPage -1) * pageDisplayCount;
 	}
 
 	public long getMaxPage() {
-		if (recordCount % displayCount == 0) {
-			return recordCount / (long)displayCount;
+		if (recordCount % pageDisplayCount == 0) {
+			return recordCount / (long)pageDisplayCount;
 		} else {
-			return (recordCount / (long)displayCount) + 1;
+			return (recordCount / (long)pageDisplayCount) + 1;
 		}
 	}
 }

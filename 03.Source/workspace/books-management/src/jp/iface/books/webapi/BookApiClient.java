@@ -1,4 +1,4 @@
-package jp.iface.books.service;
+package jp.iface.books.webapi;
 
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -16,8 +16,9 @@ import org.hibernate.criterion.Restrictions;
 
 import jp.iface.books.dto.BookDto;
 import jp.iface.books.entity.WebAPIAccessHistory;
+import jp.iface.common.AbstractDBAccessComponent;
 
-public abstract class BookApi extends AbstractDBAccessService{
+public abstract class BookApiClient extends AbstractDBAccessComponent{
 
 	private int webApiType;
 	private String webApiUrl;
@@ -37,7 +38,7 @@ public abstract class BookApi extends AbstractDBAccessService{
 		try {
 
 			CloseableHttpClient httpclient = HttpClients.createDefault();
-			HttpGet request = new HttpGet(this.webApiUrl + isbn);
+			HttpGet request = new HttpGet(webApiUrl.replace(C_REPLACEMENT_ISBN,isbn));
 
 			CloseableHttpResponse response = null;
 

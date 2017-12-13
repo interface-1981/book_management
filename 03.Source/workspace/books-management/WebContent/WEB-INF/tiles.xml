@@ -91,6 +91,10 @@
       <put-attribute name="body" value="/WEB-INF/content/LendingBooksList.jsp" />
     </definition>
 
+    <definition name="refresh" extends="base">
+      <put-attribute name="title" value="リフレッシュ完了" />
+      <put-attribute name="body" value="/WEB-INF/content/RefreshConfig.html" />
+    </definition>
 
 </tiles-definitions>
 

@@ -10,7 +10,7 @@ import org.apache.struts2.interceptor.validation.SkipValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import dto.UserDto;
-import jp.iface.books.action.AbstractAction;
+import jp.iface.common.AbstractAction;
 import service.UserService;
 
 

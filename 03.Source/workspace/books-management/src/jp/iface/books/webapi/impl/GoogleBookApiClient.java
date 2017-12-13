@@ -1,16 +1,17 @@
-package jp.iface.books.service.impl;
+package jp.iface.books.webapi.impl;
 
 import com.google.gson.Gson;
 
 import jp.iface.books.dto.BookDto;
-import jp.iface.books.dto.GoogleBooksApiResponseDto;
-import jp.iface.books.service.BookApi;
+import jp.iface.books.webapi.BookApiClient;
+import jp.iface.books.webapi.impl.dto.GoogleBooksApiResponseDto;
+import jp.iface.common.Configuration;
 
-public class GoogleBookApi extends BookApi {
+public class GoogleBookApiClient extends BookApiClient {
 
-	public GoogleBookApi() {
-		super.setWebApiType(1);
-		super.setWebApiUrl("https://www.googleapis.com/books/v1/volumes?q=isbn:");
+	public GoogleBookApiClient() {
+		super.setWebApiType(C_WEB_API_TYPE_GOOGLE);
+		super.setWebApiUrl(Configuration.getValue(P_WEB_API_URL_GOOGLE));
 
 	}
 	@Override

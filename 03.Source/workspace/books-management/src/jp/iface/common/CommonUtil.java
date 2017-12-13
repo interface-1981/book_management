@@ -1,4 +1,4 @@
-package jp.iface.books.util;
+package jp.iface.common;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -104,9 +104,6 @@ public class CommonUtil {
 			URL url = new URL(_url); // ダウンロードする URL
 			conn = url.openConnection();
 			InputStream inputStream = conn.getInputStream();
-
-            byte result[] = null;
-            byte buf[] = new byte[1];
 
             ByteArrayOutputStream bout = new ByteArrayOutputStream();
             byte [] buffer = new byte[1024];

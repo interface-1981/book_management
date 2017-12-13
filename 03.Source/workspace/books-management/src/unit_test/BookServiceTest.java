@@ -1,7 +1,7 @@
 package unit_test;
 
 import jp.iface.books.dto.BookDto;
-import jp.iface.books.service.impl.GoogleBookApi;
+import jp.iface.books.webapi.impl.GoogleBookApiClient;
 
 public class BookServiceTest {
 
@@ -10,7 +10,7 @@ public class BookServiceTest {
 		String s = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>test";
 		s = s.replace("<?xml[.]*?>", "");
 		//NDLBookApi api = new NDLBookApi();
-		GoogleBookApi api = new GoogleBookApi();
+		GoogleBookApiClient api = new GoogleBookApiClient();
 		BookDto b = api.getBookData("9784062778305");
 		b.getAuthor();
 	}

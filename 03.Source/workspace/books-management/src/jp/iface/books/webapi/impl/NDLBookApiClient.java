@@ -1,4 +1,4 @@
-package jp.iface.books.service.impl;
+package jp.iface.books.webapi.impl;
 
 import java.io.ByteArrayInputStream;
 import java.util.Locale;
@@ -10,13 +10,14 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
 import jp.iface.books.dto.BookDto;
-import jp.iface.books.service.BookApi;
+import jp.iface.books.webapi.BookApiClient;
+import jp.iface.common.Configuration;
 
-public class NDLBookApi extends BookApi {
+public class NDLBookApiClient extends BookApiClient {
 
-	public NDLBookApi() {
-		super.setWebApiType(2);
-		super.setWebApiUrl("http://iss.ndl.go.jp/api/opensearch?isbn=");
+	public NDLBookApiClient() {
+		super.setWebApiType(C_WEB_API_TYPE_NDL);
+		super.setWebApiUrl(Configuration.getValue(P_WEB_API_URL_NDL));
 
 	}
 	@Override

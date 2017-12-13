@@ -122,7 +122,7 @@ function detaile(button){
 				</s:if>
 				<s:hidden property="bookSearchDto.currentPage" name="bookSearchDto.currentPage"/>
 				<s:hidden property="bookSearchDto.recordCount" name="bookSearchDto.recordCount"/>
-				<s:hidden property="bookSearchDto.displayCount" name="bookSearchDto.displayCount"/>
+				<s:hidden property="bookSearchDto.pageDisplayCount" name="bookSearchDto.pageDisplayCount"/>
 				<s:hidden property="bookSearchDto.pagerAction" name="bookSearchDto.pagerAction" id="pagerAction" value="%{bookSearchDto.ACTION_INIT}"/>
 			</div>
 		</div>

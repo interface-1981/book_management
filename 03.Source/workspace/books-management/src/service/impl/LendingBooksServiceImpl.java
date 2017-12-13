@@ -11,11 +11,11 @@ import org.springframework.stereotype.Component;
 import dto.LendingBooksDto;
 import dto.LendingBooksSearchDto;
 import entity.LendingBooks;
-import jp.iface.books.service.AbstractDBAccessService;
+import jp.iface.common.AbstractDBAccessComponent;
 import service.LendingBooksService;
 
 @Component
-public class LendingBooksServiceImpl extends AbstractDBAccessService implements LendingBooksService{
+public class LendingBooksServiceImpl extends AbstractDBAccessComponent implements LendingBooksService{
 
 
 	@Override

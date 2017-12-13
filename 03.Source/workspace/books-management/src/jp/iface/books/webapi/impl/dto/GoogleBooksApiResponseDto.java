@@ -1,4 +1,4 @@
-package jp.iface.books.dto;
+package jp.iface.books.webapi.impl.dto;
 
 import java.util.List;
 

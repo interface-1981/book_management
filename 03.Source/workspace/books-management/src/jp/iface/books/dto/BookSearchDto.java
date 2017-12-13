@@ -3,6 +3,8 @@ package jp.iface.books.dto;
 import java.util.Date;
 import java.util.List;
 
+import jp.iface.common.AbstractPagerListDto;
+
 
 
 public class BookSearchDto extends AbstractPagerListDto {

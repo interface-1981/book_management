@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import jp.iface.books.dto.BookDataResponseDto;
 import jp.iface.books.service.BookService;
+import jp.iface.common.AbstractAction;
 
 
 @Namespace("/")

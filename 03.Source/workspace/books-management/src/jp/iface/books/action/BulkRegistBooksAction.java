@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import jp.iface.books.dto.BookDto;
 import jp.iface.books.service.BookService;
+import jp.iface.common.AbstractAction;
 
 @Namespace("/")
 @ParentPackage("tiles-default")
@@ -27,8 +28,9 @@ public class BulkRegistBooksAction extends AbstractAction {
 
     @Action("/bulk_regist_books")
     /**
+     *図書マスタ一括登録画面の初期表示を行う
      *
-     * @return
+     * @return 処理結果
      * @throws Exception
      */
     public String initView() throws Exception {
@@ -40,8 +42,9 @@ public class BulkRegistBooksAction extends AbstractAction {
 
     @Action("/bulk_regist_books/regist")
     /**
+     *図書マスタ一括登録処理を行う
      *
-     * @return
+     * @return 処理結果
      * @throws Exception
      */
     public String regist() throws Exception {
@@ -55,7 +58,7 @@ public class BulkRegistBooksAction extends AbstractAction {
 			if (bookDto.getIsbn() != null && bookDto.getIsbn().length() == 13) {
 
 				if(bookService.getBook(bookDto.getIsbn()) != null) {
-			    	super.addActionError("既に登録済みの書籍です ISBN:["+ bookDto.getIsbn() + "]");
+			    	super.addActionError(getMessage(MESSAGE.ALREADY_REGIST_BOOK).replace(C_REPLACEMENT_ISBN, bookDto.getIsbn()));
 			    	bookDto.setStyle("color:RED;");
 			    	isError = true;
 				}
@@ -63,7 +66,7 @@ public class BulkRegistBooksAction extends AbstractAction {
 			}
 		}
 		if (registList.size() == 0) {
-			super.addActionError("登録対象がありません");
+			super.addActionError(getMessage(MESSAGE.NOTFOUND_REGIST_BOOK));
 			isError = true;
 		}
 		//登録処理
@@ -75,7 +78,7 @@ public class BulkRegistBooksAction extends AbstractAction {
 			}
 			//一括登録の実行
 	    	this.bookService.bulkRegistBook(registList);
-	    	super.addActionMessage("一括登録が完了しました");
+	    	super.addActionMessage(getMessage(MESSAGE.COMPLETE_REGIST));
 
 		}
 

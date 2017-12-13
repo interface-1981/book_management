@@ -1,6 +1,6 @@
 package unit_test;
 
-import jp.iface.books.util.CommonUtil;
+import jp.iface.common.CommonUtil;
 
 public class CommonUtilTest {
 

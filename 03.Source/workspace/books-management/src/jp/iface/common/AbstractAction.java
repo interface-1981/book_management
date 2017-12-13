@@ -1,4 +1,4 @@
-package jp.iface.books.action;
+package jp.iface.common;
 
 import java.util.Map;
 
@@ -14,22 +14,31 @@ import org.apache.struts2.util.ServletContextAware;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
 
-import jp.iface.books.util.CommonUtil;
+public class AbstractAction extends ActionSupport implements ServletContextAware, ServletRequestAware, ServletResponseAware,SessionAware, Action, Constants {
 
-public class AbstractAction extends ActionSupport implements ServletContextAware, ServletRequestAware, ServletResponseAware,SessionAware, Action {
+	protected enum MESSAGE {
+		COMPLETE_REGIST,
+		ALREADY_REGIST_BOOK,
+		NOTFOUND_REGIST_BOOK
+	}
 
     private static final long serialVersionUID = 1L;
+
     public CommonUtil util = new CommonUtil();
+
     protected HttpServletRequest request;
     protected HttpServletResponse response;
     protected ServletContext context;
-    Map sessionMap;
+
+    @SuppressWarnings("rawtypes")
+	Map sessionMap;
 
     public void setServletResponse(HttpServletResponse response) {
         this.response = response;
     }
 
-    public void setSession(Map sessionMap) {
+    @SuppressWarnings("rawtypes")
+	public void setSession(Map sessionMap) {
         this.sessionMap = sessionMap;
     }
 
@@ -42,6 +51,10 @@ public class AbstractAction extends ActionSupport implements ServletContextAware
 	public void setServletRequest(HttpServletRequest request) {
 		this.request = request;
 
+	}
+
+	protected String getMessage(MESSAGE message) {
+		return Configuration.getValue(message.toString());
 	}
 
 }

@@ -5,7 +5,7 @@ import java.util.Date;
 import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 
 import jp.iface.books.entity.Book;
-import jp.iface.books.util.CommonUtil;
+import jp.iface.common.CommonUtil;
 
 
 public class BookDto {

@@ -11,11 +11,11 @@ import org.springframework.stereotype.Component;
 import dto.UserDto;
 import dto.UserSearchDto;
 import entity.User;
-import jp.iface.books.service.AbstractDBAccessService;
+import jp.iface.common.AbstractDBAccessComponent;
 import service.UserService;
 
 @Component
-public class UserServiceImpl extends AbstractDBAccessService implements UserService{
+public class UserServiceImpl extends AbstractDBAccessComponent implements UserService{
 
 	@Override
 	public void registUser(UserDto userDto) {
