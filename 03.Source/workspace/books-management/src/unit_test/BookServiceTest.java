@@ -1,19 +1,18 @@
 package unit_test;
 
-import dto.BookDto;
-import service.BookService;
-import service.impl.BookServiceImpl;
+import jp.iface.books.dto.BookDto;
+import jp.iface.books.service.impl.GoogleBookApi;
 
 public class BookServiceTest {
 
 	public static void main(String[] args) {
 		// TODO 自動生成されたメソッド・スタブ
-
-		BookService service = new BookServiceImpl();
-		long isbn = 9784822282288L;
-		//long isbn = 9784822282000L;
-		BookDto b = service.getBookByISBN(isbn);
-		service.registBook(b);
+		String s = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>test";
+		s = s.replace("<?xml[.]*?>", "");
+		//NDLBookApi api = new NDLBookApi();
+		GoogleBookApi api = new GoogleBookApi();
+		BookDto b = api.getBookData("9784062778305");
+		b.getAuthor();
 	}
 
 }

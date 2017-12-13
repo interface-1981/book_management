@@ -15,8 +15,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.opensymphony.xwork2.validator.annotations.Validations;
 import com.opensymphony.xwork2.validator.annotations.VisitorFieldValidator;
 
-import dto.BookDto;
-import service.BookService;
+import jp.iface.books.action.AbstractAction;
+import jp.iface.books.dto.BookDto;
+import jp.iface.books.service.BookService;
 
 
 @Namespace("/")

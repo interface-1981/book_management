@@ -10,7 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import dto.BookDto;
 import dto.OwnedBooksDto;
 import dto.UserDto;
-import service.BookService;
+import jp.iface.books.action.AbstractAction;
+import jp.iface.books.dto.BookSearchDto;
+import jp.iface.books.service.BookService;
 import service.OwnedBooksService;
 import service.UserService;
 
@@ -38,7 +40,7 @@ public class OwnedBooksAction extends AbstractAction {
 	public Integer bookId;
 
     private void initialize() {
-    	this.bookList = this.bookService.getBookList().toArray(new BookDto[0]);
+    	this.bookList = this.bookService.getBookList(new BookSearchDto()).toArray(new BookDto[0]);
     	this.userList = this.userService.getUserList().toArray(new UserDto[0]);
     	this.bookId = this.ownedbooksDto.getBookId();
     	this.userId = this.ownedbooksDto.getUserId();

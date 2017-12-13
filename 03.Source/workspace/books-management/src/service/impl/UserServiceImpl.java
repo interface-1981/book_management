@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import dto.UserDto;
 import dto.UserSearchDto;
 import entity.User;
-import service.AbstractDBAccessService;
+import jp.iface.books.service.AbstractDBAccessService;
 import service.UserService;
 
 @Component

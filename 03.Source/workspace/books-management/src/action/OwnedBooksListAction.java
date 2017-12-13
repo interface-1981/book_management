@@ -8,6 +8,7 @@ import org.apache.struts2.convention.annotation.Results;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import dto.OwnedBooksLSearchDto;
+import jp.iface.books.action.AbstractAction;
 import service.OwnedBooksService;
 
 @Namespace("/")

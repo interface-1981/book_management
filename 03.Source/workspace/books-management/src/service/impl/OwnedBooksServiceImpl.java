@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import dto.OwnedBooksDto;
 import dto.OwnedBooksLSearchDto;
 import entity.OwnedBooks;
-import service.AbstractDBAccessService;
+import jp.iface.books.service.AbstractDBAccessService;
 import service.OwnedBooksService;
 
 @Component

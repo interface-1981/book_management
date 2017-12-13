@@ -13,6 +13,7 @@ import com.opensymphony.xwork2.validator.annotations.Validations;
 import com.opensymphony.xwork2.validator.annotations.VisitorFieldValidator;
 
 import dto.UserDto;
+import jp.iface.books.action.AbstractAction;
 import service.UserService;
 
 

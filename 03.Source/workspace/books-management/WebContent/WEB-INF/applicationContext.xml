@@ -9,5 +9,6 @@
       http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<context:component-scan base-package="service.impl" />
+	<context:component-scan base-package="jp.iface.books.service.impl" />
 
 </beans>

@@ -1,0 +1,24 @@
+-- Table: public.t_web_api_access_history
+
+-- DROP TABLE public.t_web_api_access_history;
+
+CREATE TABLE public.t_web_api_access_history
+(
+    web_api_access_history_id integer NOT NULL,
+    isbn character(13) COLLATE pg_catalog."default" NOT NULL,
+    web_api_type smallint NOT NULL,
+    error_flag boolean NOT NULL,
+    access_datetime timestamp without time zone NOT NULL,
+    response_data text COLLATE pg_catalog."default",
+    regist_datetime timestamp without time zone NOT NULL,
+    regist_user character varying COLLATE pg_catalog."default" NOT NULL,
+    message character varying COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT t_web_api_access_history_pkey PRIMARY KEY (web_api_access_history_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.t_web_api_access_history
+    OWNER to postgres;

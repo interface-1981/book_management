@@ -6,7 +6,7 @@
 <session-factory>
 
         <property name="connection.driver_class">org.postgresql.Driver</property>
-        <property name="connection.url">jdbc:postgresql://192.168.3.7:5432/Sample</property>
+        <property name="connection.url">jdbc:postgresql://192.168.3.7:5432/BooksManagement</property>
         <property name="connection.username">postgres</property>
         <property name="connection.password">9999</property>
         <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
@@ -16,9 +16,10 @@
         <mapping class="entity.Book" />
         <mapping class="entity.OwnedBooks" />
         <mapping class="entity.LendingBooks" />
-        <mapping class="entity.Sample" />
-        <mapping class="entity.WebAPIAccessHistory" />
 
+
+        <mapping class="jp.iface.books.entity.WebAPIAccessHistory" />
+        <mapping class="jp.iface.books.entity.Book" />
 
 
     </session-factory>

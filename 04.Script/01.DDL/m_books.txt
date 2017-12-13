@@ -1,0 +1,30 @@
+-- Table: public.m_books
+
+-- DROP TABLE public.m_books;
+
+CREATE TABLE public.m_books
+(
+    book_id integer NOT NULL,
+    isbn character(13) COLLATE pg_catalog."default",
+    title character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    volume character varying(30) COLLATE pg_catalog."default",
+    author character varying(100) COLLATE pg_catalog."default",
+    publisher character varying(100) COLLATE pg_catalog."default",
+    publish_date date,
+    page_count smallint,
+    contents text COLLATE pg_catalog."default",
+    thumbnail_image text COLLATE pg_catalog."default",
+    regist_datetime timestamp without time zone NOT NULL,
+    regist_user character varying COLLATE pg_catalog."default" NOT NULL,
+    modify_datetime timestamp without time zone NOT NULL,
+    modify_user character varying COLLATE pg_catalog."default" NOT NULL,
+    delete_flag boolean NOT NULL,
+    CONSTRAINT m_books_pkey PRIMARY KEY (book_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.m_books
+    OWNER to postgres;
