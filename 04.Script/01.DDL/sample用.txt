@@ -86,7 +86,7 @@ WITH (
 TABLESPACE pg_default;
 
 ALTER TABLE public."Sample"
-  
+OWNER to postgres;
 
 -- Table: public."LendingBooks"
 
@@ -105,4 +105,4 @@ WITH (
 TABLESPACE pg_default;
 
 ALTER TABLE public."LendingBooks"
-    OWNER to postgres;  OWNER to postgres;
+    OWNER to postgres;
